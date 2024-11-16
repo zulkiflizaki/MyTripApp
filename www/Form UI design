@@ -1,0 +1,46 @@
+
+ +-----------------------------------+
+ | Trip Title                        | <-- id:text-title
+ | ________________________________  | 
+ |                                   |
+ | Date of Trip                      | <-- id:text-date
+ | ________________________________  | 
+ |                                   | 
+ | Price (RM)                        | <-- id:text-price
+ | ________________________________  | 
+ |                                   | 
+ |  +-----------+                    | 
+ |  |    Save   |                    | <-- id:button-save
+ |  +-----------+                    | 
+ |                                   | 
+ |                                   | 
+ |                                   | 
+ |                                   | 
+ |                                   | 
+ |                                   | 
+ |                                   | 
+ |                                   | 
+ |                                   |
+ +-----------------------------------+
+
+
+ SQLite -> Cordova Plugin for SQLite
+ Store data from the form into the database
+
+
+ CREATE TABLE IF NOT EXISTS `trip`(
+    `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+    `title` TEXT,
+    `date` INTEGER,
+    `price` REAL,
+    `timestamp` NUMERIC
+ )
+ ;
+
+CREATE TABLE IF NOT EXISTS `trip`(`id` INTEGER PRIMARY KEY AUTOINCREMENT,`title` TEXT,`date` INTEGER,`price` REAL,`timestamp` NUMERIC);
+
+INSERT INTO `trip`(`id`,`title`,`date`,`price`,`timestamp`) VALUES (?,?,?,?);
+
+SELECT `title`, `date`, `price`, `timestamp` FROM `trip` ORDER BY `title` ASC
+
+
